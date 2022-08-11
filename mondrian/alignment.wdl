@@ -33,7 +33,7 @@ workflow AlignmentWorkflow{
         String? singularity_image = ""
         String? docker_image = "quay.io/baselibrary/ubuntu"
         Int? num_threads = 8
-        Int? num_threads_align = 1
+        Int? num_threads_align = 2
         Int? memory_override
         Int? walltime_override
     }
