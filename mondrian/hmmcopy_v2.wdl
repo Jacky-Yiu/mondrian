@@ -154,19 +154,6 @@ workflow HmmcopyWorkflow{
             walltime_override = walltime_override
     }
 
-    call utils.AddClusteringOrder as add_order{
-        input:
-            metrics = merge_cell_cycle.outfile,
-            metrics_yaml = merge_cell_cycle.outfile_yaml,
-            reads = add_mappability.outfile,
-            reads_yaml = add_mappability.outfile_yaml,
-            chromosomes = chromosomes,
-            singularity_image = singularity_image,
-            docker_image = docker_image,
-            memory_override = memory_override,
-            walltime_override = walltime_override
-    }
-
     call utils.AddQuality as add_quality{
         input:
             hmmcopy_metrics = add_order,
